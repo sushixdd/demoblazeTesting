@@ -12,11 +12,9 @@ When("I send login form with correct credentials", () => {
   cy.get('button[onclick="logIn()"]').click();
   cy.wait("@postLogin");
   cy.wait("@getEntries");
+});
+Then("I am logged in", () => {
   cy.get('[id="nameofuser"]')
     .should("exist")
     .and("contain", `Welcome ${Cypress.env("username")}`);
-});
-
-Then("I am logged in", () => {
-  cy.contains("Username:");
 });
