@@ -1,12 +1,12 @@
 import { When, Then, Given } from "@badeball/cypress-cucumber-preprocessor";
 
-Given("I am on landing page", () => {
+Given("I am on landing page with login form opened", () => {
   cy.visitBaseUrl();
+  cy.get("#login2").click();
 });
 When("I send login form with correct credentials", () => {
-  cy.get('[id="login2"]').click();
-  cy.get('input[id="loginusername"]').type(Cypress.env("username"));
-  cy.get('input[id="loginpassword"]').type(Cypress.env("password"));
+  cy.get("#loginusername").type(Cypress.env("username"));
+  cy.get("#loginpassword").type(Cypress.env("password"));
   cy.intercept("POST", "/login").as("postLogin");
   cy.intercept("GET", "/entries").as("getEntries");
   cy.get('button[onclick="logIn()"]').click();
@@ -14,7 +14,7 @@ When("I send login form with correct credentials", () => {
   cy.wait("@getEntries");
 });
 Then("I am logged in", () => {
-  cy.get('[id="nameofuser"]')
+  cy.get("#nameofuser")
     .should("exist")
     .and("contain", `Welcome ${Cypress.env("username")}`);
 });
