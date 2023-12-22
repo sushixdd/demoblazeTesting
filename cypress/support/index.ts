@@ -7,6 +7,9 @@ declare global {
        */
       visitBaseUrl(): Chainable<JQuery<HTMLElement>>;
       apiLogin(username, password): Chainable<JQuery<HTMLElement>>;
+      assertAttrib(el, attrib, value): Chainable<JQuery<HTMLElement>>;
+      assertVisibility(el, bool): Chainable<JQuery<HTMLElement>>;
+      assertContent(el, content): Chainable<JQuery<HTMLElement>>;
     }
   }
 }
