@@ -48,3 +48,16 @@ Cypress.Commands.add("assertVisibility", (el: string, bool: boolean) => {
 Cypress.Commands.add("assertContent", (el: string, content: string) => {
   cy.get(el).should("contain", content);
 });
+
+Cypress.Commands.add(
+  "assertProductProperties",
+  (product: any[], responseItems: any[]) => {
+    product.forEach((_, index) => {
+      expect(responseItems[index].cat).to.equal(product[index].cat);
+      expect(responseItems[index].desc).to.equal(product[index].desc);
+      expect(responseItems[index].id).to.equal(product[index].id);
+      expect(responseItems[index].img).to.equal(product[index].img);
+      expect(responseItems[index].price).to.equal(product[index].price);
+    });
+  }
+);
