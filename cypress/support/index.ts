@@ -10,6 +10,10 @@ declare global {
       assertAttrib(el, attrib, value): Chainable<JQuery<HTMLElement>>;
       assertVisibility(el, bool): Chainable<JQuery<HTMLElement>>;
       assertContent(el, content): Chainable<JQuery<HTMLElement>>;
+      assertProductProperties(
+        product,
+        responseItems
+      ): Chainable<JQuery<HTMLElement>>;
     }
   }
 }

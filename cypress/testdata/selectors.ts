@@ -54,3 +54,13 @@ export const selectorFooter = {
   productStore: 'img[src="bm.png"]',
   footerCopyright: "footer",
 };
+// selectors for Carousel
+export const selectorCarouselHomepage = {
+  Base: "#carouselExampleIndicators",
+  firstSlide: '[alt="First slide"]',
+  firstSlideSrc: "Samsung1.jpg",
+  secondSlide: '[alt="Second slide"]',
+  secondSlideSrc: "nexus1.jpg",
+  thirdSlide: '[alt="Third slide"]',
+  thirdSlideSrc: "iphone1.jpg",
+};
