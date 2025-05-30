@@ -1,6 +1,3 @@
-//
-const username = "admin";
-const password = "password123";
 const baseUrl = "https://www.heroku.com";
 const apiUrl = "https://restful-booker.herokuapp.com";
 
